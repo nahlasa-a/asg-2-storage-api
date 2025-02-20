@@ -1,10 +1,10 @@
-// Selecting DOM elements
+// selecting DOM elements
 const usernameInput = document.getElementById('username');
 const saveButton = document.getElementById('save-btn');   
 const clearButton = document.getElementById('clear-btn'); 
 const displayName = document.getElementById('display-name'); 
 
-// Function to save name to localStorage
+// function to save name to localStorage
 function saveName() {
     const name = usernameInput.value.trim(); 
     if (name) {
@@ -16,7 +16,7 @@ function saveName() {
     }
 }
 
-// Function to clear the name from localStorage
+// function to clear the name from localStorage
 function clearName() {
     localStorage.removeItem('savedName'); 
     usernameInput.value = ''; 
@@ -24,7 +24,7 @@ function clearName() {
     alert('Name cleared successfully!');
 }
 
-// Function to check localStorage and display the saved name on page load
+// function to check localStorage and display the saved name on page load
 function displaySavedName() {
     const savedName = localStorage.getItem('savedName'); 
     if (savedName) {
@@ -34,9 +34,9 @@ function displaySavedName() {
     }
 }
 
-// Add event listeners
+// event listeners
 saveButton.addEventListener('click', saveName); 
 clearButton.addEventListener('click', clearName); 
 
-// Display the saved name when the page loads
+// display the saved name when the page loads
 window.addEventListener('load', displaySavedName);
